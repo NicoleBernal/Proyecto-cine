@@ -1,0 +1,174 @@
+@import url(http://fonts.googleapis.com/css?family=Cabin:400);
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    width:100vw;
+    height:100vh;
+}
+header{
+    width:100%;
+    height:6%;
+    background-color: #fa8072;
+    font: condensed 100% sans-serif;
+    color:white;
+    display:flex;
+}
+header img{
+    width:50px;
+    height:100%;
+    margin-left: 50px;
+}
+.header-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+@import "compass/css3";
+
+/***********************
+ * Essential Structure *
+ ***********************/
+.flexsearch--wrapper {
+	height: 100%;
+	width: auto;
+	max-width: 100%;
+	overflow: hidden;
+	background: transparent;
+	margin: 0;
+	position: static;
+}
+	
+.flexsearch--form {
+	overflow: hidden;
+	position: relative;
+}
+	
+.flexsearch--input-wrapper {
+	padding: 0 66px 0 0; /* Right padding for submit button width */
+	overflow: hidden;
+}
+
+.flexsearch--input {
+  width: 100%;
+  height:100%;
+}
+
+/***********************
+ * Configurable Styles *
+ ***********************/
+.flexsearch {
+    padding: 0 25px 0 200px; /* Padding for other horizontal elements */
+}
+
+.flexsearch--input {
+  -webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+ 	height: 6%;
+    padding: 2px 46px 2px 10px;
+    border-radius: 20px; /* (height/2) + border-width */
+    border-style: solid;
+	border-width: 2px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #333;
+    font: condensed 120% sans-serif;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+	
+.flexsearch--submit {
+  position: absolute;
+	right: 0;
+	top: 0;
+	display: block;
+	width: 40px;
+	height: 20px;
+  padding: 0;
+  border: none;
+	margin-top: 15px; /* margin-top + border-width */
+  margin-right: 15px; /* border-width */
+	background: transparent;
+  color: #888;
+  font: condensed 120% sans-serif;
+  font-size: 30px;
+  line-height: 20px;
+}
+
+.flexsearch--input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.flexsearch--input:focus.flexsearch--submit {
+ 	color: #333; 
+}
+
+.flexsearch--submit:hover {
+  color: #333;
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+	color: #888;  
+}
+
+input:-moz-placeholder {
+  color: #888
+}
+
+.reply-search{
+    width:100%;
+    height:6%;
+    justify-content: center;
+}
+
+.reply-search p{
+    width:100%;
+    height: 100%;
+    padding:5px;
+    text-align: center;
+}
+.replys-container{
+    width:100%;
+    height:88%;
+    display:flex;
+    flex-direction: row;
+}
+.menu-options{
+    width:20%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:3%
+    
+}
+.menu-options p{
+    width:80%;
+    height:50px;
+    border: 3px solid #888;
+    text-align: left;
+    text-align: center;
+    font: condensed 120% sans-serif;
+    margin-bottom: 3px;
+}
+table{
+    width:100%;
+    height:100%;
+}
+td{
+    width:200px;
+    height:250px;
+}
+
+.movies_research img{
+    width:150px;
+    height: 200px;
+    justify-content: center;
+}

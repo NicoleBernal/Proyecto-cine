@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header-container">
+        <div><img src="../static/img/royal.png"></div>
+
+        <div class="flexsearch">
+                <div class="flexsearch--wrapper">
+                    <form class="flexsearch--form" action="#" method="post">
+                        <div class="flexsearch--input-wrapper">
+                            <input class="flexsearch--input" type="search" placeholder="Buscar pelicula...">
+                        </div>
+                        <input class="flexsearch--submit" type="submit" value="&#10140;"/>
+                    </form>
+                </div>
+        </div>
+    </header>
+    <section type="text" class="reply-search">
+        <p>Resultados: "Alien"</p>
+    </section>
+    <section class="replys-container">
+        <div class="menu-options">
+            <p>Inicio</p>
+            <p>Peliculas</p>
+            <p>Funciones</p>
+            <p>Mi cuenta</p>
+        </div>
+        <div>
+            <table class="movies_research">
+                <tr>
+                    <td>
+                        <img src="https://www.ecartelera.com/carteles/8900/8906/016_m.jpg">
+                    </td>
+                    <td>
+                        <img src="https://www.ecartelera.com/carteles/1800/1801/001_m.jpg">
+                    </td>
+                    <td>
+                        <img src="https://media.revistagq.com/photos/5cf127d19d80fc1d9ee34a95/3:4/w_1821,h_2428,c_limit/avenger%20endgame.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://www.renegado.com.mx/Imagenes/M_050719113811.jpg">
+                    </td>
+                    <td>
+                        <img src="https://www.ecartelera.com/carteles/8100/8129/019_m.jpg">
+                    </td>
+                    <td>
+                        <img src="https://www.ecartelera.com/carteles/8900/8903/014.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://www.ecartelera.com/carteles/14300/14355/011.jpg">
+                    </td>
+                    <td>
+                        <img src="https://img.europapress.es/fotoweb/fotonoticia_20150506182853_420.jpg">
+                    </td>
+                    <td>
+                        <img src="https://www.ecartelera.com/carteles/4000/4095/004_m.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://es.web.img2.acsta.net/pictures/17/08/25/09/36/103601.jpg">
+                    </td>
+                    <td>
+                        <img src="https://www.ecartelera.com/carteles/1700/1779/006_m.jpg">
+                    </td>
+                    <td>
+                        <img src="https://www.ecartelera.com/carteles/1700/1773/001_m.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="" alt="No se encuentra disponible">
+                    </td>
+                    <td>
+                        <img src="" alt="No se encuentra disponible">
+                    </td>
+                    <td>
+                        <img src="" alt="No se encuentra disponible">
+                    </td>
+                </tr>
+               
+            </table>
+        </div>
+    </section>
+
+    
+</body>
+</html>
+
+<link rel="stylesheet" href="{{ url_for('static',filename='css/search_style.css') }}">

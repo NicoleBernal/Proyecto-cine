@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <header class="header-container">
+        <div><img src="../static/img/royal.png"></div>
+        <div><h1>Mi perfil</h1></div>
+    </header>
+    <section class="banner-profile">
+        <div class="user-image user-main" >
+            <img src="../static/img/users.png">
+        </div>  
+        <div class="user-text user-main">
+            <p>Correo elctronico</p>
+            <p>Usuario</p>
+            <p>Pais</p>
+            <p>Rol</p>
+        </div>
+       </section>
+    <section class="div-container">
+        <div class="menu-profile">
+            <div class="menu-tools">
+                <p>Inicio</p>
+                <p>Editar perfil</p>
+                <p>Comprar Tiquete</p>
+                <p>Ayuda</p>
+                <p>Siguenos</p>
+                <p>Facebook</p>
+                <p>Twitter</p>
+            </div>
+        </div>
+        <div class="data-visualization">
+            <form>
+                <h4>Mis Datos</h4>
+                <div class="input_c">
+                    <p>Nombres</p>
+                    <input>
+                </div>
+                <div  class="input_c">
+                    <p>Apellidos</p>
+                    <input>
+                </div>
+                <div  class="input_c">
+                    <p>Tipo de documento</p>
+                    <input>
+                </div>
+                <div  class="input_c">
+                    <p>N° de documento</p>
+                    <input>
+                </div>
+                <div  class="input_c">
+                    <p>Fecha de nacimiento</p>
+                    <input>
+                </div>
+                <div  class="input_c">
+                    <p>Pais de residencia</p>
+                    <input>
+                </div>
+                <button>Guardar</button>
+            </form>
+        </div>
+        <div class="billboard">
+            <img src="https://www.ecartelera.com/carteles/4000/4095/004_m.jpg">
+            <img src="https://img.europapress.es/fotoweb/fotonoticia_20150506182853_420.jpg">
+            <img src="https://www.ecartelera.com/carteles/8900/8906/016_m.jpg">
+        </div>
+    </section>
+</body>
+</html>
+
+<link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
