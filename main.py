@@ -77,4 +77,44 @@ def cartelera():
 def funciones():
     return render_template("funciones.html")
 
+@app.route("/cartelera/romance")
+def romance():
+    return render_template("romance.html")
+
+@app.route("/cartelera/comedia")
+def comedia():
+    return render_template("comedia.html")
+
+@app.route("/cartelera/animadas")
+def animadas():
+    return render_template("animadas.html")
+
+@app.route("/cartelera/terror")
+def terror():
+    return render_template("terror.html")
+
+@app.route("/cartelera/drama")
+def drama():
+    return render_template("drama.html")
+
+@app.route("/cartelera/estrenos")
+def estrenos():
+    return render_template("estrenos.html")
+
+@app.route("/cartelera/puntuaciones")
+def puntuaciones():
+    return render_template("puntuaciones.html")
+
+@app.route("/cartelera/comentarios")
+def comentarios():
+    return render_template("comentarios.html")
+
+@app.route("/cartelera/contacto")
+def contacto():
+    return render_template("contacto.html")
+
+@app.route("/administrador")
+def administrador():
+    return render_template("admin.html")
+
 app.run(debug=True)
