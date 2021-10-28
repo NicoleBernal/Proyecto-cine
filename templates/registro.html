@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-Sistema de Vuelos - Registro de usuarios
+ Registro de usuarios
 {% endblock %}
 
 {% block content %}
@@ -122,9 +122,9 @@ Sistema de Vuelos - Registro de usuarios
     </p>
 
     <p>
-        {{ frm.correo.label }}
-        {{ frm.correo }}
-        {% for error in frm.correo.errors %}
+        {{ frm.email.label }}
+        {{ frm.email }}
+        {% for error in frm.email.errors %}
 
     <div>
         {{ error }}
@@ -134,10 +134,14 @@ Sistema de Vuelos - Registro de usuarios
     </p>
 
     <p>
+        {{ frm.id_rol.label }}
+        {{ frm.id_rol }}
+        {% for error in frm.id_rol.errors %}
 
     <div>
         {{ error }}
     </div>
+    {% endfor %}
 
     </p>
 
