@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "base.html" %}
 
 {% block title %}
@@ -100,3 +101,105 @@ COMENTARIOS
 <a class="text-3" href="{{ url_for('login') }}"><span class="span3">¿Ya tiene una cuenta? </span><span
         class="span4">Inicia sesion</span></a>
 {% endblock %}
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Peliculas</h1>
+    </header>
+    <div id="header">
+        <ul class="nav">
+            <li><a href="/">Inicio</a></li>
+            <li><a>Genero</a>
+                <ul>
+                    <li><a href="/cartelera/romance">Romance</a></li>
+                    <li><a href="/cartelera/comedia">Comedia</a></li>
+                    <li><a href="/cartelera/animadas">Animadas</a></li>
+                    <li><a href="/cartelera/terror">Terror</a></li>
+                    <li><a href="/cartelera/drama">Drama</a></li>
+                </ul>
+            </li>
+            <li><a href="/cartelera/estrenos">Estrenos</a></li>
+            <li><a href="/cartelera/comentarios">Calificaciones</a>
+            </li>
+            <li><a href="/contacto">Contacto</a></li>
+        </ul>
+    </div>
+    <div class="movies">
+        <table>
+            <tr>
+                <td>
+                    <img src="https://www.ecartelera.com/carteles/8900/8906/016_m.jpg">
+                </td>
+                <td>
+                    <img src="https://www.ecartelera.com/carteles/1800/1801/001_m.jpg">
+                </td>
+                <td>
+                    <img src="https://media.revistagq.com/photos/5cf127d19d80fc1d9ee34a95/3:4/w_1821,h_2428,c_limit/avenger%20endgame.jpg">
+                </td>
+                <td>
+                    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ant-man-y-la-avispa-poster-1551691490.jpg?crop=1xw:1xh;center,top&resize=980:*">
+                </td>
+               
+            </tr>
+            <tr>
+                <td>
+                    <img src="https://www.renegado.com.mx/Imagenes/M_050719113811.jpg">
+                </td>
+                <td>
+                    <img src="https://www.ecartelera.com/carteles/8100/8129/019_m.jpg">
+                </td>
+                <td>
+                    <img src="https://www.ecartelera.com/carteles/8900/8903/014.jpg">
+                </td>
+                <td>
+                    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/iron-man-3-poster-1551693244.jpg?crop=1xw:1xh;center,top&resize=980:*">
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    <img src="https://www.ecartelera.com/carteles/14300/14355/011.jpg">
+                </td>
+                <td>
+                    <img src="https://img.europapress.es/fotoweb/fotonoticia_20150506182853_420.jpg">
+                </td>
+                <td>
+                    <img src="https://www.ecartelera.com/carteles/4000/4095/004_m.jpg">
+                </td>
+                <td>
+                    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/loki-poster-fotogramas-1617632148.jpg?crop=1xw:1xh;center,top&resize=980:*">
+                </td>
+               
+            </tr>
+            <tr>
+                <td>
+                    <img src="https://es.web.img2.acsta.net/pictures/17/08/25/09/36/103601.jpg">
+                </td>
+                <td>
+                    <img src="https://www.ecartelera.com/carteles/1700/1779/006_m.jpg">
+                </td>
+                <td>
+                    <img src="https://www.ecartelera.com/carteles/1700/1773/001_m.jpg">
+                </td>
+                <td>
+                    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/guardianes-de-la-galaxia-poster-1551691490.jpg?crop=1xw:1xh;center,top&resize=980:*">
+                </td>
+               
+            </tr>
+           
+        </table>
+    </div>
+
+</body>
+</html>
+
+<link rel="stylesheet" href="{{ url_for('static',filename='css/peliculas_style.css') }}">
+>>>>>>> 3173b8ea15c3489c25f0fb1ba6bff4135f425abe
