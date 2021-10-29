@@ -1,11 +1,7 @@
 from flask import Flask,redirect,request,flash,session,escape,render_template
 import sqlite3
 import os
-<<<<<<< HEAD
-from forms.formularios import Login, Registro, Comentarios
-=======
 from forms.formularios import Login, Registro,comentarios
->>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
 import hashlib
 
 app = Flask(__name__)
@@ -46,11 +42,7 @@ def login():
                 elif session["id_rol"] == 3:
                     return "Tampoco"
             else:
-<<<<<<< HEAD
-                flash("Usuario/Password errados")
-=======
                 return f"Usuario/Password errados"
->>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
 
     return render_template("ingreso.html", frm = frm)
 
@@ -99,7 +91,7 @@ def cartelera():
 
 
 #----------------------------------------CREAR CRUD COMENTARIOS ------------------------------------------------#
-<<<<<<< HEAD
+#<<<<<<< HEAD
 @app.route('/cartelera/comentarios', methods=["GET","POST"])
 def comentario():
     frm = Comentarios()#Instancia de la clase en formulario.py
@@ -139,7 +131,7 @@ def comentario():
 #             conn.commit()#Confirmación de inserción de datos :)
 #             return "¡Datos actualizados exitosamente ^v^!"
 #     return "No se pudo actualizar "
-=======
+#=======
 @app.route('/comentarios', methods=["GET","POST"])
 
 def comentario():
@@ -173,7 +165,7 @@ def actualizarC():
                 conn.commit()#Confirmación de inserción de datos :)
                 return "¡Datos actualizados exitosamente ^v^!"
         return "No se pudo actualizar "
->>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
+#>>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
 #----------------------------------------VISUALIZAR CRUD COMENTARIO ---------------------------------------------#
 
 
@@ -205,29 +197,6 @@ def eliminarC():
 def funciones():
     return render_template("funciones.html")
 
-<<<<<<< HEAD
-@app.route("/cartelera/romance")
-def romance():
-    return render_template("romance.html")
-
-@app.route("/cartelera/comedia")
-def comedia():
-    return render_template("comedia.html")
-
-@app.route("/cartelera/animadas")
-def animadas():
-    return render_template("animadas.html")
-
-@app.route("/cartelera/terror")
-def terror():
-    return render_template("terror.html")
-
-@app.route("/cartelera/drama")
-def drama():
-    return render_template("drama.html")
-
-=======
->>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
 @app.route("/logout")
 def logout():
     session.clear()
