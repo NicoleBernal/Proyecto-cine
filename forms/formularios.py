@@ -9,6 +9,7 @@ class Login(FlaskForm):
     enviar = SubmitField ("Iniciar sesion") 
     
 class Registro(FlaskForm):
+<<<<<<< HEAD
     username = StringField("Usuario", validators=[DataRequired("Usuario es obligatorio")])
     nombre = StringField("Nombre", validators=[DataRequired("Nombre es obligatorio")])
     email = StringField("Correo", validators=[DataRequired("Correo es obligatorio")])
@@ -21,6 +22,20 @@ class Comentarios(FlaskForm):
     comentario = TextAreaField("Comentario", validators=[DataRequired("Comentario es obligatorio")])
     titulo = StringField("Pelicula", validators=[DataRequired("Nombre de la pelicula es obligatorio")])
     nombre = StringField("Nombre", validators=[DataRequired("Nombre es obligatorio")])
+=======
+    username = StringField("Usuario")
+    nombre = StringField("Nombre")
+    email = StringField("Correo")
+    password = PasswordField("Password")
+    registrar = SubmitField("Registrar")
+    id_rol = SelectField("Rol", coerce=int, choices=[("0","--Rol--"),("1","Usuario"),("2","Administrador"),("3","Superadministrador")], validators=[DataRequired(message="Campo en blanco")])
+
+class comentarios(FlaskForm):
+    id_comentario = StringField("id_comentario")
+    comentario = TextAreaField("Comentario")
+    titulo = StringField("Pelicula")
+    nombre = StringField("Usuario")
+>>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
     comentar = SubmitField("Enviar")
 
 

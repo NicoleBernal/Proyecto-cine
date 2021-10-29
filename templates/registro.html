@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 
 {% block title %}
+<<<<<<< HEAD
 Registro de usuarios
+=======
+ Registro de usuarios
+>>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
 {% endblock %}
 
 {% block content %}
@@ -229,11 +233,18 @@ Registro de usuarios
                     </div>
                     </p>
 
+<<<<<<< HEAD
                     <div class="input-box">
                         <p>
                             {{ frm.password.label }}
                             {{ frm.password }}
                             {% for error in frm.password.errors %}
+=======
+    <p>
+        {{ frm.email.label }}
+        {{ frm.email }}
+        {% for error in frm.email.errors %}
+>>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
 
                         <div>
                             {{ error }}
@@ -243,6 +254,7 @@ Registro de usuarios
 
                     </p>
 
+<<<<<<< HEAD
                     <div class="input-box">
                         <p>
                             {{ frm.id_rol.label }}
@@ -256,6 +268,17 @@ Registro de usuarios
                     </div>
                     </p>
 
+=======
+    <p>
+        {{ frm.id_rol.label }}
+        {{ frm.id_rol }}
+        {% for error in frm.id_rol.errors %}
+
+    <div>
+        {{ error }}
+    </div>
+    {% endfor %}
+>>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
 
                     <p>
 

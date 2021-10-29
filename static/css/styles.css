@@ -11,7 +11,7 @@ body{
 header{
     width:inherit;
     height: 50px;
-    background-color: #fa8072;
+    background-color: #28287a;
     font: condensed 120% sans-serif;
     color:white;
     display:flex;
@@ -22,8 +22,9 @@ header{
     width:35vw;
 }
 img{
-    width:60px;
-    height:60px;
+    width:55px;
+    height:45px;
+    margin:2px;
 }
 .menu{
     width:50px;
@@ -38,7 +39,7 @@ img{
 }
 
 #page_subtitles{
-    color:#fa8072;
+    color:#28287a;
 }
 div .letter-container{
     margin-left: 7vw;
@@ -67,7 +68,7 @@ button{
     border-radius: 5px;
     cursor: pointer;
     float:right;
-    background-color:#fa8072;
+    background-color:#28287a;
     color:white;
     width:70px;
     height: 40px;
@@ -107,7 +108,7 @@ section .data-visualization{
 section .billboard{
     width:25vw;
     height:100%;
-    background-color: #fa8072;
+    background-color: #28287a;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -138,7 +139,7 @@ body{
 .menu-tools{
     width:inherit;
     height: 32vw;
-    color:black;
+    color:white;
     text-align: center;
     font: condensed 140% sans-serif;
 }
@@ -150,7 +151,7 @@ div .menu-tools{
 .menu-tools p{
     padding:20px;
     border:  5px solid white;
-    background-color: #fa8072;
+    background-color:#28287a;
     cursor:pointer;
 }
 
@@ -189,5 +190,17 @@ form input{
 }
 
 .checkbox-policies{
-    border-radius: 20px;
+    min-width: 4vw !important;
+    width:20px !important;
+    height:20px !important;
+    padding-left: 0px !important;
+    padding-right: 20px !important;
+}
+div #policies {
+    width:15vw !important;
+    display:flex !important;
+    flex-direction: row;
+}
+div #policies p{
+    font: condensed 80% sans-serif ;
 }

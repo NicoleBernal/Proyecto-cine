@@ -1,7 +1,11 @@
 from flask import Flask,redirect,request,flash,session,escape,render_template
 import sqlite3
 import os
+<<<<<<< HEAD
 from forms.formularios import Login, Registro, Comentarios
+=======
+from forms.formularios import Login, Registro,comentarios
+>>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
 import hashlib
 
 app = Flask(__name__)
@@ -42,7 +46,11 @@ def login():
                 elif session["id_rol"] == 3:
                     return "Tampoco"
             else:
+<<<<<<< HEAD
                 flash("Usuario/Password errados")
+=======
+                return f"Usuario/Password errados"
+>>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
 
     return render_template("ingreso.html", frm = frm)
 
@@ -91,6 +99,7 @@ def cartelera():
 
 
 #----------------------------------------CREAR CRUD COMENTARIOS ------------------------------------------------#
+<<<<<<< HEAD
 @app.route('/cartelera/comentarios', methods=["GET","POST"])
 def comentario():
     frm = Comentarios()#Instancia de la clase en formulario.py
@@ -130,6 +139,42 @@ def comentario():
 #             conn.commit()#Confirmación de inserción de datos :)
 #             return "¡Datos actualizados exitosamente ^v^!"
 #     return "No se pudo actualizar "
+=======
+@app.route('/comentarios', methods=["GET","POST"])
+
+def comentario():
+        frm = comentarios()#Instancia de la clase en formulario.py
+        if frm.validate_on_submit():
+          #Recupera datos
+            
+            comentario = frm.comentario.data
+            titulo = frm.titulo.data
+            nombre = frm.nombre.data
+            with sqlite3.connect("cineRoyal.db") as con:
+                # Crea cursos para manipular la BD
+                cursor = con.cursor()
+                #Prepara la sentencia SQL a ejecutar
+                cursor.execute ("INSERT INTO comentario (comentario,titulo,nombre) VALUES (?,?,?)",[comentario,titulo,nombre])
+                con.commit()
+                return "Guardado con éxito"
+        return render_template("comentarios.html", frm= frm) #Respuesta    
+
+#----------------------------------------EDITAR CRUD COMENTARIOS ------------------------------------------------#
+@app.route('/comentarios/actualizar/', methods=["POST","GET"])
+def actualizarC():
+        form = comentarios()#Instancia de la clase en formulario.py
+        if request.method == "POST":
+            nombre = form.nombre.data
+       
+            with sqlite3.connect("cineRoyal.db") as conn:
+                cur = conn.cursor()
+                cur.execute(
+                    "UPDATE comentario SET mensaje = ? WHERE nombre = ?", [nombre]
+                )
+                conn.commit()#Confirmación de inserción de datos :)
+                return "¡Datos actualizados exitosamente ^v^!"
+        return "No se pudo actualizar "
+>>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
 #----------------------------------------VISUALIZAR CRUD COMENTARIO ---------------------------------------------#
 # @app.route('/comentarios/eliminar/', methods=["POST"])
 # def eliminarC():
@@ -151,6 +196,7 @@ def comentario():
 def funciones():
     return render_template("funciones.html")
 
+<<<<<<< HEAD
 @app.route("/cartelera/romance")
 def romance():
     return render_template("romance.html")
@@ -171,6 +217,8 @@ def terror():
 def drama():
     return render_template("drama.html")
 
+=======
+>>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
 @app.route("/logout")
 def logout():
     session.clear()
