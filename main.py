@@ -116,7 +116,6 @@ def actualizarC():
         form = comentarios()#Instancia de la clase en formulario.py
         if request.method == "POST":
             nombre = form.nombre.data
-       
             with sqlite3.connect("cineRoyal.db") as conn:
                 cur = conn.cursor()
                 cur.execute(
@@ -126,21 +125,31 @@ def actualizarC():
                 return "¡Datos actualizados exitosamente ^v^!"
         return "No se pudo actualizar "
 #----------------------------------------VISUALIZAR CRUD COMENTARIO ---------------------------------------------#
-# @app.route('/comentarios/eliminar/', methods=["POST"])
-# def eliminarC():
-   
-#     form = comentarios()
-#     if request.method == "POST":
-#         docum = form.documento.data
-#         with sqlite3.connect("cineRoyal.db") as conn:
-#             conn.row_factory = sqlite3.Row
-#             cur = conn.cursor()#manipula la db
-#             cur.execute("DELETE FROM comentario WHERE id_comentario = ?", [docum])
-#             if conn.total_changes > 0:
-#                 return "Comentario  borrado ^v^"
-#             return render_template("comentarios.html")
-#     return "Error"
+
+
+
+##falta esta parte
+
+
+
+
+
+
 #----------------------------------------BORRAR CRUD COMENTARIOS ------------------------------------------------#
+@app.route('/comentarios/eliminar/', methods=["POST"])
+def eliminarC(): 
+        form = comentarios()
+        if request.method == "POST":
+            id_borrado = form.id_comentario.data
+            with sqlite3.connect("cineRoyal.db") as conn:
+                conn.row_factory = sqlite3.Row
+                cur = conn.cursor()#manipula la db
+                cur.execute("DELETE FROM comentario WHERE id_comentario = ?", [id_borrado])
+                if conn.total_changes > 0:
+                    return "Comentario  borrado ^v^"
+                return render_template("comentarios.html")
+        return "Error"
+
 
 @app.route("/funciones")
 def funciones():
