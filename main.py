@@ -90,26 +90,25 @@ def cartelera():
 ##################################################################################################################
 
 
-#----------------------------------------CREAR CRUD COMENTARIOS ------------------------------------------------#
 #<<<<<<< HEAD
-@app.route('/cartelera/comentarios', methods=["GET","POST"])
-def comentario():
-    frm = Comentarios()#Instancia de la clase en formulario.py
-    if frm.validate_on_submit():
-        #Recupera datos
-        id_comentario = frm.id_comentario.data
-        comentario = frm.comentario.data
-        titulo = frm.titulo.data
-        nombre = frm.nombre.data
-
-        with sqlite3.connect("cineRoyal.db") as con:
-            # Crea cursos para manipular la BD
-            cursor = con.cursor()
-            #Prepara la sentencia SQL a ejecutar
-            cursor.execute ("INSERT INTO comentario (id_comentario,comentario,titulo,nombre) VALUES (?,?,?,?)",[id_comentario,comentario,titulo,nombre])
-            con.commit()
-            flash("Guardado con éxito")
-    return render_template("comentarios.html", frm= frm) #Respuesta    
+#@app.route('/cartelera/comentarios', methods=["GET","POST"])
+#def comentario():
+#    frm = Comentarios()#Instancia de la clase en formulario.py
+#    if frm.validate_on_submit():
+#        #Recupera datos
+#        id_comentario = frm.id_comentario.data
+#        comentario = frm.comentario.data
+#        titulo = frm.titulo.data
+#        nombre = frm.nombre.data
+#
+#        with sqlite3.connect("cineRoyal.db") as con:
+#            # Crea cursos para manipular la BD
+#            cursor = con.cursor()
+#            #Prepara la sentencia SQL a ejecutar
+#            cursor.execute ("INSERT INTO comentario (id_comentario,comentario,titulo,nombre) VALUES (?,?,?,?)",[id_comentario,comentario,titulo,nombre])
+#            con.commit()
+#            flash("Guardado con éxito")
+#    return render_template("comentarios.html", frm= frm) #Respuesta    
 
 #----------------------------------------EDITAR CRUD COMENTARIOS ------------------------------------------------#
 # @app.route('/comentarios/actualizar/', methods=["POST"])
@@ -132,6 +131,8 @@ def comentario():
 #             return "¡Datos actualizados exitosamente ^v^!"
 #     return "No se pudo actualizar "
 #=======
+#----------------------------------------CREAR CRUD COMENTARIOS ------------------------------------------------#
+
 @app.route('/comentarios', methods=["GET","POST"])
 
 def comentario():
