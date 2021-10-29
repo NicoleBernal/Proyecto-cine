@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Peliculas</h1>
+    </header>
+    <div id="header">
+        <ul class="nav">
+            <li><a href="/">Inicio</a></li>
+            <li><a>Genero</a>
+                <ul>
+                    <li><a href="/cartelera/romance">Romance</a></li>
+                    <li><a href="/cartelera/comedia">Comedia</a></li>
+                    <li><a href="/cartelera/animadas">Animadas</a></li>
+                    <li><a href="/cartelera/terror">Terror</a></li>
+                    <li><a href="/cartelera/drama">Drama</a></li>
+                </ul>
+            </li>
+            <li><a href="/cartelera/estrenos">Estrenos</a></li>
+            <li><a href="/cartelera/comentarios">Comentarios</a></li>
+            <li><a href="/cartelera/funciones">Funciones</a></li>
+        </ul>
+    </div>
+    <div class="movies">
+        <table>
+            <tr>
+                <td>
+                    <img src="https://es.web.img3.acsta.net/c_310_420/pictures/21/06/07/13/39/2336288.jpg">
+                </td>
+                <td>
+                    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-toy-story-4-1561081661.jpeg?crop=0.9519576719576719xw:1xh;center,top&resize=480:*">
+                </td>
+                <td>
+                    <img src="https://i.pinimg.com/236x/0e/97/aa/0e97aaa26a5f2057aea5301137f1c4f2.jpg">
+                </td>
+                <td>
+                    <img src="https://i.pinimg.com/originals/91/ce/f5/91cef5e205f44929652a49b47b8b018a.jpg">
+                </td>
+               
+            </tr>
+            <tr>
+                <td>
+                    <img src="https://www.todoinfantil.com/img/pelicula/frozen-2.jpg">
+                </td>
+                <td>
+                    <img src="https://cloud10.todocoleccion.online/cine-guias-peliculas/tc/2016/11/10/17/65772242.jpg">
+                </td>
+                <td>
+                    <img src="https://i.pinimg.com/originals/6b/18/49/6b1849f0904e0901da20364b547ec3d1.jpg">
+                </td>
+                <td>
+                    <img src="https://archivos-cms.cinecolombia.com/images/7/5/3/8/18357-6-esl-CO/AFICHE%20GATOPIA.jpg">
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    <img src="https://cdn.cinencuentro.com/wp-content/uploads/2015/06/Un-gran-dinosaurio.jpg">
+                </td>
+                <td>
+                    <img src="https://i.pinimg.com/474x/20/f9/04/20f904615ab055be69074532f01bbe75.jpg">
+                </td>
+                <td>
+                    <img src="https://www.todoinfantil.com/img/pelicula/espias-a-escondidas.jpg">
+                </td>
+                <td>
+                    <img src="https://img.ecartelera.com/noticias/fotos/65500/65547/1.jpg">
+                </td>
+               
+            </tr>
+            <tr>
+                <td>
+                    <img src="https://www.pequeocio.com/wp-content/uploads/2012/11/la-sirenita.jpg">
+                </td>
+                <td>
+                    <img src="https://pbs.twimg.com/media/E2-uWzZWEAM1omP.jpg:large">
+                </td>
+                <td>
+                    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/la-princesa-encantada-poster-1561082154.jpg?crop=0.9523809523809523xw:1xh;center,top&resize=480:*">
+                </td>
+                <td>
+                    <img src="https://i.pinimg.com/originals/aa/3d/6b/aa3d6bf7fa7b558159318430b4f58b16.jpg">
+                </td>
+               
+            </tr>
+           
+        </table>
+    </div>
+
+</body>
+</html>
+
+<link rel="stylesheet" href="{{ url_for('static',filename='css/peliculas_style.css') }}">

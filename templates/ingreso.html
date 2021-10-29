@@ -7,91 +7,213 @@ Cines - Login
 {% block content %}
 <style>
     * {
-        background-color: #f5f5f5;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        opacity:0.8;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
     }
-    
+
     body {
-        background-image: url("https://i2.wp.com/cocalecas.net/wp-content/uploads/2014/11/cine.jpg?fit=1362%2C930&ssl=1");
-        color:rgb(189, 60, 60);
+        min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
-        
-    }
-    
-    label {
-        display: block;
-        margin-bottom: 10px;
-
-    }
-    
-    #username {
-        width: 258px;
-        height: 44px;
-        left: 551px;
-        top: 242px;
-
-        background: rgba(249, 249, 249, 0.15);
-        border: 2px solid gray;
-        box-sizing: border-box;
-        border-radius: 20px;
+        background: rgb(8, 8, 95);
+        padding: 30px;
     }
 
+    .container {
+        position: relative;
+        max-width: 850px;
+        width: 100%;
+        background: #fff;
+        padding: 40px 30px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .container .cover {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 100%;
+        width: 50%;
+        background: rgb(46, 46, 189);
+        z-index: 98;
+        content: "";
+        z-index: 100;
+    }
+
+    .container .cover img {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: 12;
+    }
+
+    #formulario,
+    .container {
+        height: 100%;
+        width: 100%;
+        background: #fff;
+    }
+
+    .container .form-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .form-content .login-form {
+        width: calc(100% /2 - 25px);
+    }
+
+    #formulario,
+    .form-content .title {
+        position: relative;
+        font-size: 24px;
+        font-weight: 500;
+        color: #333;
+    }
+
+    #formulario,
+    .form-content .input-boxes {
+        margin-top: 30px;
+    }
+
+    #formulario,
+    .form-content .title:before {
+        left: 0;
+        bottom: 0;
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 25px;
+        background: rgb(46, 46, 189);
+    }
+
+    #formulario,
+    .input-boxes {
+        margin-top: 30px;
+    }
+
+    #formulario,
+    .form-content .input-box {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        width: 100%;
+        margin: 10px 0;
+        position: relative;
+    }
+
+    .form-content .input-box #username,
     #password {
-        width: 258px;
-        height: 44px;
-        left: 551px;
-        top: 242px;
-        background: rgba(249, 249, 249);
-        border: 2px solid gray;
-        box-sizing: border-box;
-        border-radius: 20px;
+        height: 100%;
+        width: 100%;
+        outline: none;
+        border: none;
+        padding: 0 30px;
+        font-size: 16px;
+        font-weight: 500;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .form-content .input-box #username:focus,
+    .form-content .input-box #password:focus {
+        border-color: rgb(46, 46, 189);
+    }
+
+    .form-content .input-box #username:valid,
+    .form-content .input-box #password:valid {
+        border-color: rgb(46, 46, 189);
+    }
+
+    .form-content .input-box i {
+        position: absolute;
+        color: rgb(46, 46, 189);
+        font-size: 17px;
+    }
+
+    .text {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(46, 46, 189);
+    }
+
+    a:hover {
+        text-decoration: underline;
     }
 
     #enviar {
-        width: 258px;
-        height: 44px;
-        left:600px;
-        top: 417px;
-        background: white;
-        border-radius: 20px;
-        display: flex;
-        justify-content: center;
+        position: relative;
+        margin-top: 40px;
+        color: #fff;
+        background: rgb(46, 46, 189);
+        border-radius: 6px;
+        padding: 0;
+        cursor: pointer;
+        width: 150px;
+        height: 35px;
+        border: none;
+        left: 25%;
     }
 </style>
 
-<h1 class="text-1">Iniciar sesion!</h1>
-
-<form action="" method="post">
-    {{ frm.hidden_tag() }}
-    <p class="username">
-        {{ frm.username.label }}
-        {{ frm.username }}
-        {% for error in frm.username.errors %}
-
-    <div>
-        {{ error }}
+<div class="container">
+    <div class="cover">
+        <div class="front">
+            <img src="../static/img/capture_20211025092721674.bmp">
+        </div>
     </div>
-    {% endfor %}
-    </p>
+    <div class="content">
+        <form action="" method="post">
+            <div class="form-content">
+                <div class="login-form">
+                    <div class="title">Login</div>
+                    <div class="input-boxes">
+                        <div class="input-box">
+                            <i class="fas fa-envelope"></i>
+                            {{ frm.hidden_tag() }}
+                            <p>
+                                {{ frm.username.label }}
+                                {{ frm.username }}
+                                {% for error in frm.username.errors %}
+                            <div>
+                                {{ error }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        </p>
+                        <div class="input-box">
+                            <i class="fas fa-envelope"></i>
+                            <p>
+                                {{ frm.password.label }}
+                                {{ frm.password }}
+                                {% for error in frm.password.errors %}
 
-    <p>
-        {{ frm.password.label }}
-        {{ frm.password }}
-        {% for error in frm.password.errors %}
-
-    <div>
-        {{ error }}
+                            <div>
+                                {{ error }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        </p>
+                        <div class="text">No tiene una cuenta?
+                            <a href="{{ url_for('registrar') }}">Regístrate</a>
+                        </div>
+                        <div class="button">
+                            {{ frm.enviar }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
-    {% endfor %}
-
-    </p>
-    {{ frm.enviar }}
-
-</form>
-<a class="text-3" href="{{ url_for('registrar') }}"><span class="span3">¿Aún no tienes una cuenta? </span><span
-        class="span4">Regístrate</span></a>
+</div>
 {% endblock %}

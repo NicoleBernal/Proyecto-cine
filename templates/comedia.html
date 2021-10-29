@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Peliculas</h1>
+    </header>
+    <div id="header">
+        <ul class="nav">
+            <li><a href="/">Inicio</a></li>
+            <li><a>Genero</a>
+                <ul>
+                    <li><a href="/cartelera/romance">Romance</a></li>
+                    <li><a href="/cartelera/comedia">Comedia</a></li>
+                    <li><a href="/cartelera/animadas">Animadas</a></li>
+                    <li><a href="/cartelera/terror">Terror</a></li>
+                    <li><a href="/cartelera/drama">Drama</a></li>
+                </ul>
+            </li>
+            <li><a href="/cartelera/estrenos">Estrenos</a></li>
+            <li><a href="/cartelera/comentarios">Comentarios</a></li>
+            <li><a href="/cartelera/funciones">Funciones</a></li>
+        </ul>
+    </div>
+    <div class="movies">
+        <table>
+            <tr>
+                <td>
+                    <img src="https://cartelera.elpais.com/assets/uploads/2019/03/01030250/C_19192.jpg">
+                </td>
+                <td>
+                    <img src="https://cartelera.elpais.com/assets/uploads/2019/05/31030306/C_21054.jpg">
+                </td>
+                <td>
+                    <img src="https://cartelerasdecine.info/wp-content/uploads/2018/05/Hombre-al-Agua-Overboard-2018-Estreno-Comedia-Pelicula-Eugenio-Derbez.jpg">
+                </td>
+                <td>
+                    <img src="https://cartelera.elpais.com/assets/uploads/2018/11/12124345/C_18755.jpg">
+                </td>
+               
+            </tr>
+            <tr>
+                <td>
+                    <img src="https://cartelera.elpais.com/assets/uploads/2018/12/14030254/C_19118.jpg">
+                </td>
+                <td>
+                    <img src="https://es.web.img3.acsta.net/pictures/16/10/20/11/13/545303.jpg">
+                </td>
+                <td>
+                    <img src="https://cartelerasdecine.info/wp-content/uploads/2018/05/Sexy-por-Accidente-I-Feel-Pretty-Pelicula-Comedia-Estreno-Mayo-2018.jpg">
+                </td>
+                <td>
+                    <img src="https://www.diariodenavarra.es/uploads/2013/10/24/60b124a4ae762.jpeg">
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    <img src="https://es.web.img3.acsta.net/pictures/210/107/21010763_20130606164735637.jpg">
+                </td>
+                <td>
+                    <img src="https://cartelerasdecine.info/wp-content/uploads/2019/12/Doblemente-embarazada-comedia-2019-carteleras-de-cine-mexico.jpg">
+                </td>
+                <td>
+                    <img src="https://es.web.img3.acsta.net/c_310_420/pictures/21/06/22/09/57/3468618.jpg">
+                </td>
+                <td>
+                    <img src="https://cartelerasdecine.info/wp-content/uploads/2018/09/Somos-Campeones-en-Carteleras-de-Cine.jpg">
+                </td>
+               
+            </tr>
+            <tr>
+                <td>
+                    <img src="https://images.squarespace-cdn.com/content/v1/581bd18003596e16cc905cad/1597694713513-QB43HMYID7RSSUJEHW0L/The+Wrong+Missy+-+Netflix.jpg">
+                </td>
+                <td>
+                    <img src="https://animeflv.best/wp-content/pics/peliculas-de-humor-picante.jpg">
+                </td>
+                <td>
+                    <img src="https://www.elseptimoarte.net/carteles/en_guerra_con_mi_abuelo_85830.jpg">
+                </td>
+                <td>
+                    <img src="https://i.pinimg.com/originals/b1/1f/0a/b11f0a9d91744bd401d1551e5ac28db5.jpg">
+                </td>
+               
+            </tr>
+           
+        </table>
+    </div>
+
+</body>
+</html>
+
+<link rel="stylesheet" href="{{ url_for('static',filename='css/peliculas_style.css') }}">
