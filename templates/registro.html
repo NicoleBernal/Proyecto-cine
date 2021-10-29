@@ -1,138 +1,274 @@
 {% extends "base.html" %}
 
 {% block title %}
+<<<<<<< HEAD
+Registro de usuarios
+=======
  Registro de usuarios
+>>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
 {% endblock %}
 
 {% block content %}
 <style>
     * {
-        background-color: white;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
     }
 
     body {
-        color: black;
+        min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
+        background: rgb(8, 8, 95);
+        padding: 30px;
+    }
+
+    .container {
+        position: relative;
+        max-width: 850px;
+        width: 100%;
+        background: #fff;
+        padding: 40px 30px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .container .cover {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 100%;
+        width: 50%;
+        background: rgb(46, 46, 189);
+        z-index: 98;
+        content: "";
+        z-index: 100;
+    }
+
+    .container .cover img {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: 12;
     }
 
 
-    label {
-        display: block;
-        margin-bottom: 10px;
-        color:black;
+    #formulario,
+    .container {
+        height: 100%;
+        width: 100%;
+        background: #fff;
     }
 
-    #nombre {
-        width: 258px;
-        height: 44px;
-        left: 551px;
-        top: 252px;
-
-        background: rgba(249, 249, 249);
-        border: 2px solid gray;
-        box-sizing: border-box;
-        border-radius: 20px;
+    .container .form-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    #username {
-        width: 258px;
-        height: 44px;
-        left: 551px;
-        top: 252px;
-        background: rgba(249, 249, 249);
-        border: 2px solid gray;
-        box-sizing: border-box;
-        border-radius: 20px;
+    .form-content .registro-form {
+        width: calc(100% /2 - 25px);
     }
 
-    #password {
-        width: 258px;
-        height: 44px;
-        left: 551px;
-        top: 252px;
-
-        background: rgba(249, 249, 249);
-        border: 2px solid gray;
-        box-sizing: border-box;
-        border-radius: 20px;
+    #formulario,
+    .form-content .title {
+        position: absolute;
+        font-size: 24px;
+        font-weight: 500;
+        color: #333;
+        top: 5px;
     }
 
-    #correo {
-        width: 258px;
-        height: 44px;
-        left: 551px;
-        top: 252px;
-
-        background: rgba(249, 249, 249);
-        border: 2px solid gray;
-        box-sizing: border-box;
-        border-radius: 20px;
+    #formulario,
+    .form-content .input-boxes {
+        margin-top: 30px;
     }
 
+    #formulario,
+    .form-content .title:before {
+        left: 0;
+        bottom: 0;
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 25px;
+        background: rgb(46, 46, 189);
+    }
+
+    #formulario,
+    .input-boxes {
+        margin-top: 10px;
+        position: relative;
+    }
+
+    #formulario,
+    .form-content .input-box {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        width: 100%;
+        margin: 10px 0;
+        position: relative;
+    }
+
+    .form-content .input-box #nombre,
+    #username,
+    #password,
+    #email {
+        height: 100%;
+        width: 100%;
+        outline: none;
+        border: none;
+        padding: 0 30px;
+        font-size: 16px;
+        font-weight: 500;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .form-content .input-box #nombre:focus,
+    .form-content .input-box #username:focus,
+    .form-content .input-box #password:focus,
+    .form-content .input-box #email:focus {
+        border-color: rgb(46, 46, 189);
+    }
+
+    .form-content .input-box #nombre:valid,
+    .form-content .input-box #username:valid,
+    .form-content .input-box #password:valid,
+    .form-content .input-box #email:valid {
+        border-color: rgb(46, 46, 189);
+    }
+
+    .form-content .input-box i {
+        position: absolute;
+        color: rgb(46, 46, 189);
+        font-size: 17px;
+    }
+
+    .text {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(46, 46, 189);
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
 
     #registrar {
-        width: 258px;
-        height: 44px;
-        left: 551px;
-        top: 417px;
-        border-radius: 20px;
+        position: relative;
+        margin-top: 40px;
+        color: #fff;
+        background: rgb(46, 46, 189);
+        border-radius: 6px;
+        padding: 0;
+        cursor: pointer;
+        width: 150px;
+        height: 35px;
+        border: none;
+        left: 25%;
     }
 </style>
 
-<h1 class="text-1">Registro</h1>
-<form action="" method="post">
-    {{ frm.hidden_tag() }}
-
-    <p>
-        {{ frm.nombre.label }}
-        {{ frm.nombre }}
-        {% for error in frm.nombre.errors %}
-
-    <div>
-        {{ error }}
+<div class="container">
+    <div class="cover">
+        <div class="front">
+            <img src="../static/img/capture_20211025092721674.bmp">
+        </div>
     </div>
-    {% endfor %}
+    <div class="content">
+        <form action="" method="post">
+            <div class="form-content">
+                <div class="title">Registro</div>
+                <div class="input-boxes">
+                    <div class="input-box">
+                        {{ frm.hidden_tag() }}
 
-    </p>
-    <p>
-        {{ frm.username.label }}
-        {{ frm.username }}
-        {% for error in frm.username.errors %}
+                        <p>
+                            {{ frm.nombre.label }}
+                            {{ frm.nombre }}
+                            {% for error in frm.nombre.errors %}
 
-    <div>
-        {{ error }}
-    </div>
-    {% endfor %}
-    </p>
+                        <div>
+                            {{ error }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    </p>
 
-    <p>
-        {{ frm.password.label }}
-        {{ frm.password }}
-        {% for error in frm.password.errors %}
+                    </p>
 
-    <div>
-        {{ error }}
-    </div>
-    {% endfor %}
+                    <div class="input-box">
+                        <p>
+                            {{ frm.email.label }}
+                            {{ frm.email }}
+                            {% for error in frm.email.errors %}
 
-    </p>
+                        <div>
+                            {{ error }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    </p>
 
+                    <div class="input-box">
+                        <p>
+                            {{ frm.username.label }}
+                            {{ frm.username }}
+                            {% for error in frm.username.errors %}
+
+                        <div>
+                            {{ error }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    </p>
+
+<<<<<<< HEAD
+                    <div class="input-box">
+                        <p>
+                            {{ frm.password.label }}
+                            {{ frm.password }}
+                            {% for error in frm.password.errors %}
+=======
     <p>
         {{ frm.email.label }}
         {{ frm.email }}
         {% for error in frm.email.errors %}
+>>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
 
-    <div>
-        {{ error }}
-    </div>
-    {% endfor %}
+                        <div>
+                            {{ error }}
+                        </div>
+                        {% endfor %}
+                    </div>
 
-    </p>
+                    </p>
 
+<<<<<<< HEAD
+                    <div class="input-box">
+                        <p>
+                            {{ frm.id_rol.label }}
+                            {{ frm.id_rol }}
+                            {% for error in frm.id_rol.errors %}
+
+                        <div>
+                            {{ error }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    </p>
+
+=======
     <p>
         {{ frm.id_rol.label }}
         {{ frm.id_rol }}
@@ -142,11 +278,24 @@
         {{ error }}
     </div>
     {% endfor %}
+>>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
 
-    </p>
+                    <p>
 
-    {{ frm.registrar }}
-</form>
-<a class="text-3" href="{{ url_for('login') }}"><span class="span3">¿Ya tiene una cuenta? </span><span
-        class="span4">Inicia sesion</span></a>
+                    <div>
+                        {{ error }}
+                    </div>
+
+                    </p>
+                    <div class="text">¿Ya tiene una cuenta?
+                        <a href="{{ url_for('login') }}">Inicia sesion</a>
+                    </div>
+                    <div class="button">
+                        {{ frm.registrar }}
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}
