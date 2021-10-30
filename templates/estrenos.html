@@ -1,41 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Estrenos</title>
 </head>
+
 <body>
     <header>
         <h1>Peliculas</h1>
     </header>
     <div id="header">
         <ul class="nav">
-            <li><a href="/">Inicio</a></li>
+            <li><a href="/cartelera">Inicio</a></li>
             <li><a>Genero</a>
                 <ul>
                     <li><a href="/cartelera/romance">Romance</a></li>
                     <li><a href="/cartelera/comedia">Comedia</a></li>
                     <li><a href="/cartelera/animadas">Animadas</a></li>
-                    <li><a href="/cartelera/terror">Terror</a></li>
+                    <li><a href="/cartelera/accion">Accion</a></li>
                     <li><a href="/cartelera/drama">Drama</a></li>
                 </ul>
             </li>
             <li><a href="/cartelera/estrenos">Estrenos</a></li>
-<<<<<<< HEAD
             <li><a href="/cartelera/comentarios">Comentarios</a></li>
-            <li><a href="/cartelera/funciones">Funciones</a></li>
-=======
-            <li><a>Calificaciones</a>
-                <ul>
-                    <li><a href="/cartelera/comentarios">Comentarios</a></li>
-                    <li><a href="/cartelera/puntuaciones">Puntuaciones</a></li>
-                </ul>
-            </li>
-            <li><a href="/contacto">Contacto</a></li>
->>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
+            <li><a href="/logout">Cerrar sesion</a></li>
         </ul>
+    </div>
+    <div class="info">
+        Bienvenido,{% if session.usuario %} {{ session.usuario }} {% endif %}
     </div>
     <div class="movies">
         <table>
@@ -47,27 +42,30 @@
                     <img src="https://www.ecartelera.com/carteles/1800/1801/001_m.jpg">
                 </td>
                 <td>
-                    <img src="https://media.revistagq.com/photos/5cf127d19d80fc1d9ee34a95/3:4/w_1821,h_2428,c_limit/avenger%20endgame.jpg">
+                    <img
+                        src="https://i.pinimg.com/236x/0e/97/aa/0e97aaa26a5f2057aea5301137f1c4f2.jpg">
                 </td>
                 <td>
-                    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ant-man-y-la-avispa-poster-1551691490.jpg?crop=1xw:1xh;center,top&resize=980:*">
+                    <img
+                        src="https://i.pinimg.com/originals/91/ce/f5/91cef5e205f44929652a49b47b8b018a.jpg">
                 </td>
-               
+
             </tr>
             <tr>
                 <td>
-                    <img src="https://www.renegado.com.mx/Imagenes/M_050719113811.jpg">
+                    <img src="https://cartelera.elpais.com/assets/uploads/2019/03/01030250/C_19192.jpg">
                 </td>
                 <td>
-                    <img src="https://www.ecartelera.com/carteles/8100/8129/019_m.jpg">
+                    <img src="https://cartelera.elpais.com/assets/uploads/2019/05/31030306/C_21054.jpg">
                 </td>
                 <td>
                     <img src="https://www.ecartelera.com/carteles/8900/8903/014.jpg">
                 </td>
                 <td>
-                    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/iron-man-3-poster-1551693244.jpg?crop=1xw:1xh;center,top&resize=980:*">
+                    <img
+                        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/iron-man-3-poster-1551693244.jpg?crop=1xw:1xh;center,top&resize=980:*">
                 </td>
-                
+
             </tr>
             <tr>
                 <td>
@@ -80,9 +78,10 @@
                     <img src="https://www.ecartelera.com/carteles/4000/4095/004_m.jpg">
                 </td>
                 <td>
-                    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/loki-poster-fotogramas-1617632148.jpg?crop=1xw:1xh;center,top&resize=980:*">
+                    <img
+                        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/loki-poster-fotogramas-1617632148.jpg?crop=1xw:1xh;center,top&resize=980:*">
                 </td>
-               
+
             </tr>
             <tr>
                 <td>
@@ -95,15 +94,17 @@
                     <img src="https://www.ecartelera.com/carteles/1700/1773/001_m.jpg">
                 </td>
                 <td>
-                    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/guardianes-de-la-galaxia-poster-1551691490.jpg?crop=1xw:1xh;center,top&resize=980:*">
+                    <img
+                        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/guardianes-de-la-galaxia-poster-1551691490.jpg?crop=1xw:1xh;center,top&resize=980:*">
                 </td>
-               
+
             </tr>
-           
+
         </table>
     </div>
 
 </body>
+
 </html>
 
 <link rel="stylesheet" href="{{ url_for('static',filename='css/peliculas_style.css') }}">

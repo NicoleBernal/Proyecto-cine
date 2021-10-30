@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .tabla {
+        position: relative;
+        top: 150px;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 12px;
+    }
+
+    th {
+        font-weight: bolder;
+        text-align: left;
+        border-bottom: solid 1px #fff;
+    }
+
+    td {
+        border-bottom: solid 1px #fff;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: rgb(140, 200, 220);
+    }
+
+    tbody tr:hover {
+        background-color: #ffc107;
+    }
+
+    h1 {
+        position: absolute;
+        left: 45%;
+        top: 50px;
+    }
+</style>
+
+<body>
+    <h1>Lista peliculas</h1>
+    <table class="tabla">
+        <thead class="thead-light">
+            <tr>
+                <th>ID</th>
+                <th>TITULO</th>
+                <th>GENERO</th>
+                <th>Acciones</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for pelicula in pelicula %}
+            <tr>
+
+                <td>{{pelicula[0]}}</td>
+                <td>{{pelicula[1]}}</td>
+                <td>{{pelicula[2]}}</td>
+                <td> <a href="/edit/{{pelicula[0]}}">editar</a> |
+                    <a href="/destroy/{{pelicula[0]}}">Eliminar</a>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

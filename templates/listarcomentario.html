@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}
+Vista comentarios
+{% endblock %}
+
+{% block content %}
+<style>
+    .table {
+        position: relative;
+        top: 150px;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 12px;
+    }
+
+    td {
+        font-weight: bolder;
+        text-align: left;
+        border-bottom: solid 1px #fff;
+    }
+
+    th {
+        border-bottom: solid 1px #fff;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: rgb(140, 200, 220);
+    }
+
+    tbody tr:hover {
+        background-color: #ffc107;
+    }
+
+    h1 {
+        position: absolute;
+        left: 45%;
+        top: 50px;
+    }
+</style>
+<h1>Comentarios</h1>
+<table class="table">
+    <thead>
+        <td>Id</td>
+        <td>Comentario</td>
+        <td>Titulo Pelicula</td>
+        <td>Nombre Usuario</td>
+    </thead>
+    {% for row in rows %}
+    <tr>
+        <td>{{ row["id_comentario"] }}</td>
+        <td>{{ row["comentario"] }}</td>
+        <td>{{ row["titulo"] }}</td>
+        <td>{{ row["nombre"] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
