@@ -2,6 +2,8 @@ from flask import Flask,redirect,request,flash,session,escape,render_template
 import sqlite3
 import os
 from forms.formularios import Login, Registro,comentarios, funcion, new
+from forms.formularios import Login, Registro,comentarios
+
 import hashlib
 
 app = Flask(__name__)
@@ -42,7 +44,10 @@ def login():
                 elif session["id_rol"] == 3:
                     return redirect("/dashboard/superadministrador")
             else:
+
                 flash("Usuario/Password errados")
+                return f"Usuario/Password errados"
+
 
     return render_template("ingreso.html", frm = frm)
 
@@ -193,6 +198,51 @@ def funciong():
     return render_template("funcion.html", frm=frm) #Respuesta
 
 
+#<<<<<<< HEAD
+#@app.route('/cartelera/comentarios', methods=["GET","POST"])
+#def comentario():
+#    frm = Comentarios()#Instancia de la clase en formulario.py
+#    if frm.validate_on_submit():
+#        #Recupera datos
+#        id_comentario = frm.id_comentario.data
+#        comentario = frm.comentario.data
+#        titulo = frm.titulo.data
+#        nombre = frm.nombre.data
+#
+#        with sqlite3.connect("cineRoyal.db") as con:
+#            # Crea cursos para manipular la BD
+#            cursor = con.cursor()
+#            #Prepara la sentencia SQL a ejecutar
+#            cursor.execute ("INSERT INTO comentario (id_comentario,comentario,titulo,nombre) VALUES (?,?,?,?)",[id_comentario,comentario,titulo,nombre])
+#            con.commit()
+#            flash("Guardado con éxito")
+#    return render_template("comentarios.html", frm= frm) #Respuesta    
+
+#----------------------------------------EDITAR CRUD COMENTARIOS ------------------------------------------------#
+# @app.route('/comentarios/actualizar/', methods=["POST"])
+# def actualizarC():
+    
+#     form = comentarios()#Instancia de la clase en formulario.py
+#     if request.method == "POST":
+#         documento = form.documento.data# docu es vuelos
+#         nombre = form.nombre.data
+#         pelicula = form.pelicula.data
+#         mensaje = form.mensaje.data
+        
+#         with sqlite3.connect("cineRoyal.db") as conn:
+#             cur = conn.cursor()
+#             cur.execute(
+#                 "UPDATE comentario SET id_comentario = ?, mensaje = ?, id_pelicula = ? WHERE nombre = ?",
+#              [documento, mensaje, pelicula, nombre]
+#              )
+#             conn.commit()#Confirmación de inserción de datos :)
+#             return "¡Datos actualizados exitosamente ^v^!"
+#     return "No se pudo actualizar "
+#=======
+#----------------------------------------CREAR CRUD COMENTARIOS ------------------------------------------------#
+
+@app.route('/comentarios', methods=["GET","POST"])
+
 @app.route('/funcion/consultar', methods=["POST"])
 def listarf():
     if "usuario" in session:
@@ -250,6 +300,7 @@ def eliminar():
                 #Prepara la sentencia SQL a ejecutar
                 cursor.execute ("DELETE FROM funcion WHERE id_funcion = ?", [id_funcion])
                 con.commit()
+
                 flash("funcion  borrada")
         else:
             flash("Debe digitar el ID")
@@ -371,6 +422,55 @@ def vista():
         return render_template("getionarusuario.html",rows=rows)
     else:
         return redirect("/") 
+
+
+        return render_template("comentarios.html", frm= frm) #Respuesta    
+
+#----------------------------------------EDITAR CRUD COMENTARIOS ------------------------------------------------#
+@app.route('/comentarios/actualizar/', methods=["POST","GET"])
+def actualizarC():
+        form = comentarios()#Instancia de la clase en formulario.py
+        if request.method == "POST":
+            nombre = form.nombre.data
+            with sqlite3.connect("cineRoyal.db") as conn:
+                cur = conn.cursor()
+                cur.execute(
+                    "UPDATE comentario SET mensaje = ? WHERE nombre = ?", [nombre]
+                )
+                conn.commit()#Confirmación de inserción de datos :)
+                return "¡Datos actualizados exitosamente ^v^!"
+        return "No se pudo actualizar "
+#>>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
+#----------------------------------------VISUALIZAR CRUD COMENTARIO ---------------------------------------------#
+
+
+
+##falta esta parte
+
+
+
+
+
+
+#----------------------------------------BORRAR CRUD COMENTARIOS ------------------------------------------------#
+@app.route('/comentarios/eliminar/', methods=["POST"])
+def eliminarC(): 
+        form = comentarios()
+        if request.method == "POST":
+            id_borrado = form.id_comentario.data
+            with sqlite3.connect("cineRoyal.db") as conn:
+                conn.row_factory = sqlite3.Row
+                cur = conn.cursor()#manipula la db
+                cur.execute("DELETE FROM comentario WHERE id_comentario = ?", [id_borrado])
+                if conn.total_changes > 0:
+                    return "Comentario  borrado ^v^"
+                return render_template("comentarios.html")
+        return "Error"
+
+
+# @app.route("/funciones")
+# def funciones():
+#     return render_template("funciones.html")
 
 @app.route("/logout")
 def logout():
