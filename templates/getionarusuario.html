@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver registros</title>
+</head>
+<style>
+      .tabla {
+        position: relative;
+        top: 150px;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 12px;
+    }
+
+    th {
+        font-weight: bolder;
+        text-align: left;
+        border-bottom: solid 1px #fff;
+    }
+
+    td {
+        border-bottom: solid 1px #fff;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: rgb(140, 200, 220);
+    }
+
+    tbody tr:hover {
+        background-color: #ffc107;
+    }
+</style>
+<body>
+    <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>EMAIL</th>
+                <th>USERNAME</th>
+                <th>ROL</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{row["id_usuario"]}}</td>
+                <td>{{row["nombre"]}}</td>
+                <td>{{row["email"]}}</td>
+                <td>{{row["username"]}}</td>
+                <td>{{row["id_rol"]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

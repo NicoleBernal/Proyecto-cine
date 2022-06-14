@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(8, 8, 95);
+    color: #fff;
+  }
+
+  form {
+    position: fixed;
+    left: 40%;
+    top: 40%;
+  }
+
+  .txtTitulo,
+  .txtGenero {
+    border-radius: 10px;
+    border: 2px solid #fff;
+  }
+
+  .enviar {
+    top: 60%;
+    position: fixed;
+    left: 45%;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    width: 100px;
+    height: 30px;
+  }
+
+  h1 {
+    position: fixed;
+    left: 38%;
+    top: 130px;
+  }
+
+  .flash {
+    position: fixed;
+    left: 43%;
+    top: 430px;
+  }
+</style>
+
+<body>
+  <h1>Agregar Peliculas</h1>
+  <form method="post" action="/store" enctype="multipart/form-data">
+    <div class="pelicula">
+      <label for="nomPelicula" class="nomPelicula">Pelicula</label>
+      <input class="txtTitulo" type="text" name="txtTitulo" id="txtTitulo">
+    </div>
+    <br>
+    <div class="genPelicula">
+      <label for="" class="genero">Genero</label>
+      <input class="txtGenero" type="text" name="txtGenero" id="txtGenero">
+    </div>
+    <input class="enviar" type="submit" value="Agregar">
+  </form>
+</body>
+
+{% for msg in get_flashed_messages() %}
+<div class="flash">
+  {{ msg }}
+</div>
+{% endfor %}
+
+</html>

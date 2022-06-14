@@ -1,206 +1,201 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    width:100vw;
-    height:100vh;
+body {
+  width: 100vw;
+  height: 100vh;
 }
-header{
-    width:inherit;
-    height: 50px;
-    background-color: #28287a;
-    font: condensed 120% sans-serif;
-    color:white;
-    display:flex;
+header {
+  width: inherit;
+  height: 50px;
+  background-color: #28287a;
+  font: condensed 120% sans-serif;
+  color: white;
+  display: flex;
 }
 
-.header-container div{
-    padding-left: 60px;
-    width:35vw;
+.header-container div {
+  padding-left: 60px;
+  width: 35vw;
 }
-img{
-    width:55px;
-    height:45px;
-    margin:2px;
+img {
+  width: 55px;
+  height: 45px;
+  margin: 2px;
 }
-.menu{
-    width:50px;
-    height:50px;
+.menu {
+  width: 50px;
+  height: 50px;
 }
 
 .letter_type {
-    display: flex;
-    height:20px;
-    font: condensed 120% sans-serif;
-    padding: 30px;  
+  display: flex;
+  height: 20px;
+  font: condensed 120% sans-serif;
+  padding: 30px;
 }
 
-#page_subtitles{
-    color:#28287a;
+#page_subtitles {
+  color: #28287a;
 }
-div .letter-container{
-    margin-left: 7vw;
-    min-width: 35vw;
-    width:inherit;
-    text-align: left;
+div .letter-container {
+  margin-left: 7vw;
+  min-width: 35vw;
+  width: inherit;
+  text-align: left;
 }
-.letter-container input{
-     border-radius: 20px;
-     min-width:25vw;
-     height:30px;
-     font: condensed 100% sans-serif;
-     padding-left:15px;
-     padding-right:15px;
- }
+.letter-container input {
+  border-radius: 20px;
+  min-width: 25vw;
+  height: 30px;
+  font: condensed 100% sans-serif;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
 .input_type {
-    display: flex;
-    height:20px;
-    font: condensed 120% sans-serif;
-    padding-left: 30px;
-    
-      
+  display: flex;
+  height: 20px;
+  font: condensed 120% sans-serif;
+  padding-left: 30px;
 }
-button{
-    border-radius: 5px;
-    cursor: pointer;
-    float:right;
-    background-color:#28287a;
-    color:white;
-    width:70px;
-    height: 40px;
-    font: condensed 100% sans-serif;
-    margin-right: 10vw;
+button {
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+  background-color: #28287a;
+  color: white;
+  width: 70px;
+  height: 40px;
+  font: condensed 100% sans-serif;
+  margin-right: 10vw;
 }
-header .menu{
-    float:left;
+header .menu {
+  float: left;
 }
 
 .email-imput input {
-    min-width:30vw;
-    height:30px;
-
+  min-width: 30vw;
+  height: 30px;
 }
-.banner-profile{
-    width:100vw;
-    height:29vh;
-    background-color:gray;
-    display:flex;
+.banner-profile {
+  width: 100vw;
+  height: 29vh;
+  background-color: gray;
+  display: flex;
 }
-.banner-profile div{
-    width:50vw;
-} 
-section{
-    width: 100vw;
-    height:64vh;
+.banner-profile div {
+  width: 50vw;
 }
-section .menu-profile{
-    width:25vw;
-    height:100%;
+section {
+  width: 100vw;
+  height: 64vh;
 }
-section .data-visualization{
-    width:50vw;
-    height:100%;
-} 
-section .billboard{
-    width:25vw;
-    height:100%;
-    background-color: #28287a;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+section .menu-profile {
+  width: 25vw;
+  height: 100%;
 }
-.div-container{
-    display:flex;
+section .data-visualization {
+  width: 50vw;
+  height: 100%;
 }
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+section .billboard {
+  width: 25vw;
+  height: 100%;
+  background-color: #28287a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
-.user-image img{
-    width:150px;
-    height: 150px;
-    margin:40px;
-
+.div-container {
+  display: flex;
 }
-.user-text{
-    align-content: right;
-    text-align:right;
-    font: condensed 140% sans-serif;
-    color:white;
-    padding:50px;
-}
-.menu-tools{
-    width:inherit;
-    height: 32vw;
-    color:white;
-    text-align: center;
-    font: condensed 140% sans-serif;
-}
-div .menu-tools{
-    height:32vh;
-    margin-bottom: 30px;
-   
-}
-.menu-tools p{
-    padding:20px;
-    border:  5px solid white;
-    background-color:#28287a;
-    cursor:pointer;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.billboard img{
-    width:10vw;
-    height:20vh;
-    padding: 10px;
+.user-image img {
+  width: 150px;
+  height: 150px;
+  margin: 40px;
 }
-div .user-main{
-    width:50vw;
-    height:inherit;
+.user-text {
+  align-content: right;
+  text-align: right;
+  font: condensed 140% sans-serif;
+  color: white;
+  padding: 50px;
 }
-form{
-    padding:30px;
-    font: condensed 120% sans-serif;
+.menu-tools {
+  width: inherit;
+  height: 32vw;
+  color: white;
+  text-align: center;
+  font: condensed 140% sans-serif;
 }
-form div{
-    width:40vw;
-    height:inherit;
-    display: flex;
+div .menu-tools {
+  height: 32vh;
+  margin-bottom: 30px;
 }
-form p{
-    padding:20px;
-}
-form input{
-    width:20vw;
-    height:30px;
-    border-radius: 15px;
-    margin:20px;
-    font: condensed 100% sans-serif;
-}
-
-.input_c{
-    display:flex;
-    justify-content: space-between;
+.menu-tools p {
+  padding: 20px;
+  border: 5px solid white;
+  background-color: #28287a;
+  cursor: pointer;
 }
 
-.checkbox-policies{
-    min-width: 4vw !important;
-    width:20px !important;
-    height:20px !important;
-    padding-left: 0px !important;
-    padding-right: 20px !important;
+.billboard img {
+  width: 10vw;
+  height: 20vh;
+  padding: 10px;
+}
+div .user-main {
+  width: 50vw;
+  height: inherit;
+}
+form {
+  padding: 30px;
+  font: condensed 120% sans-serif;
+}
+form div {
+  width: 40vw;
+  height: inherit;
+  display: flex;
+}
+form p {
+  padding: 20px;
+}
+form input {
+  width: 20vw;
+  height: 30px;
+  border-radius: 15px;
+  margin: 20px;
+  font: condensed 100% sans-serif;
+}
+
+.input_c {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkbox-policies {
+  min-width: 4vw !important;
+  width: 20px !important;
+  height: 20px !important;
+  padding-left: 0px !important;
+  padding-right: 20px !important;
 }
 div #policies {
-    width:15vw !important;
-    display:flex !important;
-    flex-direction: row;
+  width: 15vw !important;
+  display: flex !important;
+  flex-direction: row;
 }
-div #policies p{
-    font: condensed 80% sans-serif ;
+div #policies p {
+  font: condensed 80% sans-serif;
 }

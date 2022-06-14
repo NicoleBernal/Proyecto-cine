@@ -1,11 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-<<<<<<< HEAD
 Registro de usuarios
-=======
- Registro de usuarios
->>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
 {% endblock %}
 
 {% block content %}
@@ -205,6 +201,31 @@ Registro de usuarios
                     </div>
                     </p>
 
+                    <div class="input-box">
+                        <p>
+                            {{ frm.username.label }}
+                            {{ frm.username }}
+                            {% for error in frm.username.errors %}
+
+                        <div>
+                            {{ error }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    </p>
+
+                    <div class="input-box">
+                        <p>
+                            {{ frm.password.label }}
+                            {{ frm.password }}
+                            {% for error in frm.password.errors %}
+
+                        <div>
+                            {{ error }}
+                        </div>
+                        {% endfor %}
+                    </div>
+
                     </p>
 
                     <div class="input-box">
@@ -222,41 +243,6 @@ Registro de usuarios
 
                     <div class="input-box">
                         <p>
-                            {{ frm.username.label }}
-                            {{ frm.username }}
-                            {% for error in frm.username.errors %}
-
-                        <div>
-                            {{ error }}
-                        </div>
-                        {% endfor %}
-                    </div>
-                    </p>
-
-<<<<<<< HEAD
-                    <div class="input-box">
-                        <p>
-                            {{ frm.password.label }}
-                            {{ frm.password }}
-                            {% for error in frm.password.errors %}
-=======
-    <p>
-        {{ frm.email.label }}
-        {{ frm.email }}
-        {% for error in frm.email.errors %}
->>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
-
-                        <div>
-                            {{ error }}
-                        </div>
-                        {% endfor %}
-                    </div>
-
-                    </p>
-
-<<<<<<< HEAD
-                    <div class="input-box">
-                        <p>
                             {{ frm.id_rol.label }}
                             {{ frm.id_rol }}
                             {% for error in frm.id_rol.errors %}
@@ -268,24 +254,11 @@ Registro de usuarios
                     </div>
                     </p>
 
-=======
-    <p>
-        {{ frm.id_rol.label }}
-        {{ frm.id_rol }}
-        {% for error in frm.id_rol.errors %}
-
-    <div>
-        {{ error }}
-    </div>
-    {% endfor %}
->>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441
-
-                    <p>
-
+                    {% for msg in get_flashed_messages() %}
                     <div>
-                        {{ error }}
+                        {{ msg }}
                     </div>
-
+                    {% endfor %}
                     </p>
                     <div class="text">¿Ya tiene una cuenta?
                         <a href="{{ url_for('login') }}">Inicia sesion</a>

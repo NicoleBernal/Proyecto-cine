@@ -107,7 +107,6 @@ Cines - Login
         position: relative;
     }
 
-<<<<<<< HEAD
     .form-content .input-box #username,
     #password {
         height: 100%;
@@ -204,6 +203,11 @@ Cines - Login
                             </div>
                             {% endfor %}
                         </div>
+                        {% for msg in get_flashed_messages() %}
+                        <div>
+                            {{ msg }}
+                        </div>
+                        {% endfor %}
                         </p>
                         <div class="text">No tiene una cuenta?
                             <a href="{{ url_for('registrar') }}">Regístrate</a>
@@ -217,11 +221,5 @@ Cines - Login
         </form>
     </div>
 </div>
+
 {% endblock %}
-=======
-</form>
-<a class="text-3" href="{{ url_for('registrar') }}"><span class="span3">¿Aún no tienes una cuenta? </span><span
-        class="span4">Regístrate</span></a>
-<link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
-{% endblock %}
->>>>>>> e0e3ff337655a15d4d6f965b388fd5b4448fa441

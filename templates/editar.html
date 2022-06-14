@@ -1,0 +1,20 @@
+EDITAR PELICULA
+{% for pelicula in pelicula %}
+
+<form method="post" action="/update" enctype="multipart/form-data">
+    ID:
+   <input type="text" value="{{pelicula[0]}}" name="txtId" id="txtId">  
+    <br>
+    Nombre Pelicula:
+   <input type="text" value="{{pelicula[1]}}" name="txtTitulo" id="txtTitulo">  
+    <br>
+    Genero:
+   <input type="text"value="{{pelicula[2]}}" name="txtGenero" id="txtGenero"> 
+   <br>
+   <br>
+   <input type="submit" value="Agregar">
+ 
+ 
+ 
+ </form>
+{% endfor %}
